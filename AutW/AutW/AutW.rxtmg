@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modulegroupdoc>
+  <testsuiteentryhierarchy>
+    <flatlistofchildren>
+      <modulegroups
+      name="AutW"
+      id="0bbe608f-56a9-4b01-9a0f-7d6fe749fdd7"/>
+    </flatlistofchildren>
+    <childhierarchy>
+      <modulegroups
+      name="AutW"
+      id="0bbe608f-56a9-4b01-9a0f-7d6fe749fdd7"/>
+    </childhierarchy>
+  </testsuiteentryhierarchy>
+</modulegroupdoc>

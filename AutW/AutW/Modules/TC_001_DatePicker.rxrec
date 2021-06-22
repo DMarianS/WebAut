@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<recordtable
+embeddedrepository="False"
+id="2401a577-14f5-4a98-b70e-906d46e374fa"
+mode="Global">
+	<repeatcount>
+		1
+	</repeatcount>
+	<turbomode>
+		False
+	</turbomode>
+	<genreport>
+		True
+	</genreport>
+	<speedfactor>
+		1
+	</speedfactor>
+	<useDefaultItemLogging>
+		True
+	</useDefaultItemLogging>
+	<codegen
+	classname="TC_001_DatePicker"
+	namespace="AutW.Modules">
+	</codegen>
+	<variables>
+	</variables>
+	<recorditems>
+		<userrecorditem
+		classname="Way2Automation"
+		enabled="True"
+		isexternaltestmethod="True"
+		methodname="TC_DatePicker"
+		namespace="AutW.Lib"
+		optional="False">
+			<comment>
+			</comment>
+			<bindings>
+			</bindings>
+			<arguments
+			id="eaeeef37-93ad-451c-87c4-dcd352bb6861">
+			</arguments>
+		</userrecorditem>
+	</recorditems>
+	<repository
+	id="c011cf0a-9134-4fdf-b594-09f9323b7d6a"
+	name="Way2AutomationRepository"
+	relativepath="..\Way2AutomationRepository.rxrep">
+		<codegen
+		classname="Way2AutomationRepository"
+		namespace="AutW">
+		</codegen>
+		<rootfolder
+		id="373f5f47-3a29-496d-9f48-71defbe79e75"
+		name="_rootdummy_">
+		</rootfolder>
+	</repository>
+	<usercodefile
+	lang="CSharp">
+		TC_001_DatePicker.UserCode.cs
+	</usercodefile>
+	<references>
+	</references>
+</recordtable>

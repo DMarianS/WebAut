@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<recordtable
+embeddedrepository="False"
+id="e0640472-2ffe-49a3-8768-555256dc1164"
+mode="Global">
+	<repeatcount>
+		1
+	</repeatcount>
+	<turbomode>
+		False
+	</turbomode>
+	<genreport>
+		True
+	</genreport>
+	<speedfactor>
+		1
+	</speedfactor>
+	<useDefaultItemLogging>
+		True
+	</useDefaultItemLogging>
+	<codegen
+	classname="AuxRecording"
+	namespace="AutW.Modules">
+	</codegen>
+	<variables>
+	</variables>
+	<recorditems>
+		<openwebsiterecorditem
+		args=""
+		browser="Chrome"
+		clearcache="False"
+		clearcookies="False"
+		enabled="True"
+		incognito="False"
+		instrument="True"
+		killexisting="False"
+		maximized="False"
+		optional="False">
+			<comment>
+			</comment>
+			<bindings>
+			</bindings>
+			<url>
+				http://www.ranorex.com
+			</url>
+		</openwebsiterecorditem>
+	</recorditems>
+	<repository
+	id="c011cf0a-9134-4fdf-b594-09f9323b7d6a"
+	name="Way2AutomationRepository"
+	relativepath="..\Way2AutomationRepository.rxrep">
+		<codegen
+		classname="Way2AutomationRepository"
+		namespace="AutW">
+		</codegen>
+		<rootfolder
+		id="373f5f47-3a29-496d-9f48-71defbe79e75"
+		name="_rootdummy_">
+		</rootfolder>
+	</repository>
+	<usercodefile
+	lang="CSharp">
+		AuxRecording.UserCode.cs
+	</usercodefile>
+	<references>
+	</references>
+</recordtable>

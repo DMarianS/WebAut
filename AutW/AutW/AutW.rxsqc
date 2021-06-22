@@ -1,0 +1,17 @@
+[
+  {
+    "Enabled": "True",
+    "TestSuite": "AutW",
+    "RunConfig": "TestRun"
+  },
+  {
+    "Enabled": "True",
+    "TestSuite": "AutomationPractice",
+    "RunConfig": "TestRun"
+  },
+  {
+    "Enabled": "True",
+    "TestSuite": "Way2Automation",
+    "RunConfig": "TestRun"
+  }
+]
