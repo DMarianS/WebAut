@@ -1,0 +1,87 @@
+Test Cases for ATM:
+
+Functional Test Cases:
+
+1. Check how the ATM responds when trying to insert valid or invalid cards inside the ATM slot:
+	a)Try to insert an invalid card (let's say pharmacy, shopping card or other store cards used for discounts, because they usually have the same size). The ATM should reject that card and state on it's screen that the inserted card is not valid!
+	b)Try to insert a valid card (credit card - bank) but not in it's usual (expected) position, e.g. upside-down or with the chip in the back (not in front like the ATM expects). The ATM should reject that card and state on it's screen that the inserted card is 
+	not inserted as it should be or a detailed error message!
+	c)Try to insert a valid card (credit card - bank) that is expired. The ATM should reject that card and state on it's screen that the inserted card is expired!
+	d)Try to insert a valid card (credit card - bank) that is not expired and is inserted as the ATM expects (chip in front). The ATM should ask for the user's pin / or to select the language.
+	e)Try to insert a valid card (credit card - bank) that is not expired but from another bank and is inserted as the ATM expects (chip in front). The ATM should ask for the user's pin / or to select the language.
+
+2. Check if the user is asked to select the language after inserting the card.
+3. After selecting the language, we should check if all the menus are displayed in the selected language until log out.	
+4. Check if the user can re-type the PIN by clearing the inserted digits. The user should be able to cancel or clear the current PIN if he/she knows that there was a mistake in typing the PIN. This is specific to some ATMs (e.g. BRD), but some log on after 
+	typing the last digit of the PIN (e.g. ING).
+5. Check that the keypad is working properly, every key.	
+6. Check how the ATM responds when typing the PIN:
+	a)Type in an incorrect PIN	and verify that the ATM displays an error message regarding incorrect PIN.
+	b)Type in an incorrect PIN using the same card,	and verify that the ATM displays an error message regarding the number of incorrect PINs inserted is exceeding the limit and block the card.
+	c)Type in a valid PIN (Happy Path) and check if the ATM displays the operations that the user can perform (main menu.)
+	
+7) Check if the PIN is masked when the user tries to enter it. It should be masked.
+8) Never tried it, but I think after a period of time when the user does not insert the PIN (neither cancel), the ATM should block the card or eject it.
+9) After typing a valid PIN and confirming it the user should be notified if the ATM does not have cash. Better option will be to display this info on the main screen without the need of logging in. Sometimes the bank employees use posters to show that the atm does not have cash.
+10) Withdrawl (after typing the PIN and selecting the withdrawl option):
+	a)Typing an invalid ammount of money you want to withdraw, the ATM should respond with an error message and a retry behavior. Some ATMs will let the user type in the ammount he/she wants to withdraw with some conditions (multiple of 5, 10, 50, 100 etc..).
+	b)Selecting an ammount of money that is greater than the current balance, the ATM should respond with an error message and a retry behavior. 
+	c)Selecting an ammount of money that is lower or equal to the current balance, the ATM should start the operation of withdrawl.
+	d)Repeating the the withdrawl operation several times exceeding the daily limit of withdrawls or the daily limit ammount, the ATM should respond with an error message and a retry behavior (if you still did not reach the max number of withdrawls and can reduce 
+	the ammount of cash to not exceed the daily limit of cash extracted).
+	e)Check if the user has the option to access the Savings, OverDraft and other accounts than the current one.	
+11) Check if a blocked card (was declared stolen and blocked by the bank) is blocked by the ATM when inserting it.
+12) Deposit (after typing the PIN and selecting the deposit option):
+	a)This may not occur, but try to place a large ammount of cash (exceeding the max ammount of cash that you can withdraw per try...inside info) when trying to deposit cash. Does that ATM accept the ammount or ?
+	b)Place the cash in a bad position (disorder) and try to proceed with the deposit operation. The ATM should be able to detect that the cash is not properly placed and display an error message and a retry behavior.
+	c)Place bills that not accepted by the ATM, The ATM should be able to detect that the cash contains bills that are not accepted and display an error message and a retry behavior. 
+	d)Place foreign currency - bills, The ATM should be able to detect that the cash contains bills that are not accepted and display an error message and a retry behavior. 
+	e)Place a valid ammount of money and proceed with the deposit operation. The ATM should add the ammount to your current balance and display an message about your opearation and/or log you out. 
+13) Printing receipts:
+	a)Check if the receipt is printed when expected (some ATMs ask the user if it wants to print the receipt at an expense or not, to save the env...).
+	b)Check if the receipt does not contain sensitive information.
+	c)Check if the receipt is as expected (requirements).
+	d)Try to print the receipt when no tonner/ink is available, the ATM should detect the levels of ink/tonner and notify the user that the receipt printing cannot be performed.
+14) In case of power surge (during withdrawl) the ATM should block the ammount of money withdrawed and roll-back the transaction (just like in SQL) and restore the money in the user's account.
+15) In case of power surge (during deposit) the ATM should block the ammount of money deposited and try to continue the operation on power restoration.
+16) Check if the user that has contactless card can access his account by scanning his card instead of inserting it in the ATM.
+ 
+UX test cases:
+1)Check if the text on the keypad is clearly visible.
+2)Check if the text on the screen is clearly visible.
+3)Check if the text (background color/images and font colors) on the screen is visible for color-blind people.
+4)Check if the ATM restores the card before opening the cash dispenser (people may forget to retrieve the card, at least try to help them out)
+
+Performance test cases:
+1)Check how responsive is the keypad, the keypad should not be laggy.
+2)The navigation in the ATM menu (after typing the PIN) should not be laggy and should run smoothly.
+3)Check the time of deposit and withdrawl operations, these should not take very long.
+4)Check the time the ATM needs to log out the user.
+
+
+
+2a) Testing inputs that contain strings:
+This is a very large discussion and I will just enumerate several cases:
+	- check if the string provided is as expected: starting with lower case, upper case, ending with upper case, lower case, regex pattern and so on -> if there are any restrictions regarding this.
+	- check if the string provided is not empty, null, contains only whitespaces -> if there are any restrictions related to these.
+	- check if the length of the provided string is in the expected range -> if there are any restrictions regarding this.
+	- check if the provided string contains digits -> if there are any restrictions regarding this.
+	- check if the provided string contains ASCII, Non-ASCII, Unicode characters -> if there are any restrictions related to these.
+	- check if the provided string contains special characters -> if there are any restrictions regarding this.
+	- check if the provided string does not contain combinations for SQL injection in case of DB querying using several inputs.
+
+2b) Testing inputs that contain path/files:
+	-check if the length of the path is in expected range (usually after 255 chars errors are most likely to occur)
+	-check for empty path, null, path contains only whitespaces
+	-check if the input is respecting a pattern based on the OS regarding the backslash and slash, even though it works both ways on windows in file explorer (e.g. C:\temp for Windows,   /usr/bin for Linux , etc)
+	-check if the input contains extra white spaces (in windows 10 file explorer it does not work.)
+	-check if input is as expected (in linux file paths are case sensitive while in windows they are insensitive)
+
+2c) Testing inputs that contain time/date:
+	-check for null, empty string, white spaces.
+	-check if input is not min date
+	-check if input is not max date
+	-check if input is a valid date: no 29 february for years that are not multiple of 4, no 30 for february, no 31 for february, april, june, september, november.
+	-check if input is a valid time: hour in 0-23 range (or 0-12 when am/pm is used), minutes in 0-59 range, seconds in 0-59 range.
+	-check if the input is following the imposed format based on culture info (e.g. hr-HR --> Displays 15.3.2008    pt-BR --> Displays 15/3/2008)
+	-check if the input is following the imposed format based on short/long date or others.
